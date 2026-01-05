@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   Scale,
   Building2,
@@ -52,9 +53,16 @@ export default function Home() {
                 e.preventDefault();
                 scrollToSection("inicio");
               }}
-              className="text-2xl md:text-3xl font-playfair font-bold text-gold hover:text-gold-light transition-colors"
+              className="flex items-center hover:opacity-80 transition-opacity"
             >
-              R&Cía
+              <Image
+                src="/logo.svg"
+                alt="Robledo & Cía"
+                width={60}
+                height={60}
+                className="w-12 h-12 md:w-16 md:h-16"
+                priority
+              />
             </a>
 
             {/* Desktop Menu */}
@@ -368,9 +376,15 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-12 mb-12">
             {/* Logo y Descripción */}
             <div>
-              <h3 className="text-3xl font-playfair font-bold text-gold mb-4">
-                R&Cía
-              </h3>
+              <div className="mb-4">
+                <Image
+                  src="/logo.svg"
+                  alt="Robledo & Cía"
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 brightness-0 invert opacity-90"
+                />
+              </div>
               <p className="text-gray-400 font-lato leading-relaxed">
                 Excelencia legal con visión moderna. Tu socio estratégico en
                 derecho.
