@@ -1,0 +1,5 @@
+# robots.txt for Robledo & Cía
+User-agent: *
+Allow: /
+
+Sitemap: https://robledoycia.com/sitemap.xml

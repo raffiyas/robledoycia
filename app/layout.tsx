@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Robledo & Cía - Excelencia Legal. Visión Moderna.",
   description: "Asesoría jurídica integral para empresas y particulares en el siglo XXI. Estudio jurídico moderno especializado en Derecho Corporativo, Litigios Civiles y Protección Patrimonial.",
   keywords: ["abogados", "estudio jurídico", "derecho corporativo", "litigios civiles", "asesoría legal"],
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
