@@ -114,8 +114,33 @@ export default function Home() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validación frontend
+    if (!formData.nombre.trim()) {
+      setFormStatus("error");
+      setFormMessage("Por favor ingresa tu nombre");
+      return;
+    }
+    
+    if (!validateEmail(formData.email)) {
+      setFormStatus("error");
+      setFormMessage("Por favor ingresa un email válido");
+      return;
+    }
+    
+    if (!formData.mensaje.trim()) {
+      setFormStatus("error");
+      setFormMessage("Por favor ingresa tu mensaje");
+      return;
+    }
+    
     setFormStatus("loading");
 
     try {
